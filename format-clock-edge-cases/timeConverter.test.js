@@ -31,3 +31,6 @@ test("can format last minute before noon", () =>
 
 test("can format last minute before midnight", () =>
   assert.equal(formatAs12HourClock("23:59"), "11:59 pm"));
+
+test("can format first time hour >= 13", () =>
+  assert.equal(formatAs12HourClock("13:00"), "01:00 pm"));

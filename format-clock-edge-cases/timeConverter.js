@@ -5,21 +5,21 @@ function formatAs12HourClock(time) {
   let period = "";
   let hourString = "";
 
-  if (hours <= 11){
+  if (hours <= 11) {
     period = "am";
   } else {
     period = "pm";
   }
 
-  if (hours >= 13){
-    hourString = hours - 12 < 10 ? `0${hours - 12}` : `${hours -12}`;
-  } else if (hours === 0){
+  if (hours >= 13) {
+    hourString = hours - 12 < 10 ? `0${hours - 12}` : `${hours - 12}`;
+  } else if (hours === 0) {
     hourString = `${hours + 12}`;
   } else {
-    hourString = hours < 10 ? `0${hours}`:`${hours}`;
+    hourString = hours < 10 ? `0${hours}` : `${hours}`;
   }
 
-  return `${hourString}:${minutes} ${period}`
+  return `${hourString}:${minutes} ${period}`;
 }
 
 export { formatAs12HourClock };

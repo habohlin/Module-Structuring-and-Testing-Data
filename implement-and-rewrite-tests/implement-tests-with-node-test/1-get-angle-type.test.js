@@ -40,3 +40,8 @@ test("Classifies straight angle 180 degrees", () => {
   const right = getAngleType(180);
   assert.equal(right, "Straight angle");
 });
+
+test("Classifies reflex angle 181 degrees", () => {
+  const right = getAngleType(181);
+  assert.equal(right, "Reflex angle");
+});

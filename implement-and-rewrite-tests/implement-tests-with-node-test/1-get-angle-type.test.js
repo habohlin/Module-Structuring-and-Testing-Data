@@ -36,3 +36,7 @@ test("Classifies obtuse angle 179 degrees", () => {
   assert.equal(right, "Obtuse angle");
 });
 
+test("Classifies straight angle 180 degrees", () => {
+  const right = getAngleType(180);
+  assert.equal(right, "Straight angle");
+});

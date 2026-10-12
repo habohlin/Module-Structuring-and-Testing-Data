@@ -14,5 +14,12 @@
 // execute the code to ensure all tests pass.
 
 export function isProperFraction(numerator, denominator) {
-  // TODO: Implement this function
+
+  const fraction = Math.absolute(numerator / denominator);
+
+  if (fraction >= 0 && fraction < 1){
+    return true;
+  }
+
+  return false;
 }

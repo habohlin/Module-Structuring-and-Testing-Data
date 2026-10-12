@@ -14,3 +14,7 @@ test("Basic proper fraction", () => {
 test("Basic improper fraction", () => {
   assert.equal(isProperFraction(4, 2), false);
 });
+
+test("Edge case improper fraction", () => {
+  assert.equal(isProperFraction(2, 2), false);
+});

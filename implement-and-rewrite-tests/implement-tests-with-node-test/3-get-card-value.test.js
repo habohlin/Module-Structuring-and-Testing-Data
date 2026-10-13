@@ -22,3 +22,11 @@ test("Arbitrary non-card string '19♠'", () => {
     "Expected clear error"
   );
 });
+
+test("Arbitrary non-card string 'P♦'", () => {
+  assert.throws(
+    () => getCardValue("P♦"),
+    /Expected a number followed by a suit, but got "P♦"/,
+    "Expected clear error"
+  );
+});

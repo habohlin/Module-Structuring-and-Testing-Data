@@ -14,3 +14,11 @@ test("Arbitrary non-card string", () => {
 });
 
 // TODO: What other invalid card cases can you think of?
+
+test("Arbitrary non-card string '19♠'", () => {
+  assert.throws(
+    () => getCardValue("19♠"),
+    /Expected a number followed by a suit, but got "19♠"/,
+    "Expected clear error"
+  );
+});

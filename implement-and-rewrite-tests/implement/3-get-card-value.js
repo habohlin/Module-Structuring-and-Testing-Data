@@ -53,6 +53,6 @@ export function getCardValue(card) {
     }
   }
 
-  throw new Error("Card string isn't valid");
+  throw new Error(`/Expected a number followed by a suit, but got "${card}"/`);
 
 }

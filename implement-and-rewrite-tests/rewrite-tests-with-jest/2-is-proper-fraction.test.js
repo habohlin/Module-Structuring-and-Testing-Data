@@ -10,3 +10,7 @@ test(`should return false when denominator is zero`, () => {
 test(`should return true when 1 and 2 is passed`, () => {
   expect(isProperFraction(1, 2)).toEqual(true);
 });
+
+test(`should return false when 4 and 2 is passed`, () => {
+  expect(isProperFraction(4, 2)).toEqual(false);
+});

@@ -44,6 +44,12 @@ test(`Should throw error when given 'P♦'`, () => {
   }).toThrow(/Expected a number followed by a suit, but got "P♦"/);
 });
 
+test(`Should throw error when given 's♦'`, () => {
+  expect(() => {
+    getCardValue("s♦");
+  }).toThrow(/Expected a number followed by a suit, but got "s♦"/);
+});
+
 // To learn how to test whether a function throws an error as expected in Jest,
 // please refer to the Jest documentation:
 // https://jestjs.io/docs/expect#tothrowerror

@@ -24,6 +24,13 @@ test("should count multiple occurrences of a character, any string length", () =
   expect(count).toEqual(6);
 });
 
+test("any string length, varying chars in string", () => {
+  const str = "aaabaaa";
+  const char = "a";
+  const count = countChar(str, char);
+  expect(count).toEqual(6);
+});
+
 // Scenario: No Occurrences
 // Given the input string `str`,
 // And a character `char` that does not exist within `str`.

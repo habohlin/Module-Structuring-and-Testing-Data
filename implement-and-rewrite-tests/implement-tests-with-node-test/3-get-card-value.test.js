@@ -76,3 +76,7 @@ test("Arbitrary non-card string 'Q'", () => {
 test("Valid card 'A♣'", () => {
   assert.equal(getCardValue("A♣"), 11);
 });
+
+test("Valid card '10♣'", () => {
+  assert.equal(getCardValue("10♣"), 10);
+});

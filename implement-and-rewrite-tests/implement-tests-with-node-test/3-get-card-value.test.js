@@ -70,3 +70,9 @@ test("Arbitrary non-card string 'Q'", () => {
     "Expected clear error"
   );
 });
+
+//Valid cases
+
+test("Valid card 'A♣'", () => {
+  assert.equal(getCardValue("A♣"), 11);
+});

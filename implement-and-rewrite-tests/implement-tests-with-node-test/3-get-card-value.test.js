@@ -80,3 +80,7 @@ test("Valid card 'A♣'", () => {
 test("Valid card '10♣'", () => {
   assert.equal(getCardValue("10♣"), 10);
 });
+
+test("Valid card 'K♠'", () => {
+  assert.equal(getCardValue("K♠"), 10);
+});

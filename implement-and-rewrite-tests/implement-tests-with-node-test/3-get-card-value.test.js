@@ -46,3 +46,11 @@ test("Arbitrary non-card string 'sOup♦'", () => {
     "Expected clear error"
   );
 });
+
+test("Arbitrary non-card string '-3♦'", () => {
+  assert.throws(
+    () => getCardValue("-3♦"),
+    /Expected a number followed by a suit, but got "-3♦"/,
+    "Expected clear error"
+  );
+});

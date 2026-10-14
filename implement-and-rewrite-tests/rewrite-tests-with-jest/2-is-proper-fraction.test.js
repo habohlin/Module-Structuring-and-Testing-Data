@@ -30,3 +30,7 @@ test(`should return false when -8 and 5 is passed`, () => {
 test(`should return true when 0 and 5 is passed`, () => {
   expect(isProperFraction(0, 5)).toEqual(true);
 });
+
+test(`should return true when 3 and -7 is passed`, () => {
+  expect(isProperFraction(3, -7)).toEqual(true);
+});

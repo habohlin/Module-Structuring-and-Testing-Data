@@ -15,6 +15,11 @@ test(`Should return 10 when given '10♣' `, () => {
 });
 
 //   Face Cards (J, Q, K)
+
+test(`Should return 10 when given 'K♠' `, () => {
+  expect(getCardValue("K♠")).toEqual(10);
+});
+
 //   Invalid Cards
 
 // To learn how to test whether a function throws an error as expected in Jest,

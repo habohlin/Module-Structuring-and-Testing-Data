@@ -77,4 +77,3 @@ test(`Should throw error when given 'Q'`, () => {
 // To learn how to test whether a function throws an error as expected in Jest,
 // please refer to the Jest documentation:
 // https://jestjs.io/docs/expect#tothrowerror
-

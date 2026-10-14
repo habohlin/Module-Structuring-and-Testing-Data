@@ -14,3 +14,7 @@ test(`should return true when 1 and 2 is passed`, () => {
 test(`should return false when 4 and 2 is passed`, () => {
   expect(isProperFraction(4, 2)).toEqual(false);
 });
+
+test(`should return false when edge case 2 and 2 is passed`, () => {
+  expect(isProperFraction(2, 2)).toEqual(false);
+});

@@ -22,3 +22,7 @@ test(`should return false when edge case 2 and 2 is passed`, () => {
 test(`should return true when -5 and 8 is passed`, () => {
   expect(isProperFraction(-5, 8)).toEqual(true);
 });
+
+test(`should return false when -8 and 5 is passed`, () => {
+  expect(isProperFraction(-8, 5)).toEqual(false);
+});

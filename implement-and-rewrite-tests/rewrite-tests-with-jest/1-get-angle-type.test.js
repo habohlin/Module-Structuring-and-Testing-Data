@@ -4,6 +4,7 @@ import { getAngleType } from "../implement/1-get-angle-type.js";
 // including boundary and invalid cases.
 
 // Case 1: Acute angles
+
 test(`should return "Acute angle" when (0 < angle < 90)`, () => {
   // Test various acute angles, including boundary cases
   expect(getAngleType(1)).toEqual("Acute angle");
@@ -12,6 +13,11 @@ test(`should return "Acute angle" when (0 < angle < 90)`, () => {
 });
 
 // Case 2: Right angle
+
+test(`should return "Right angle" when (angle = 90)`, () => {
+  expect(getAngleType(90)).toEqual("Right angle");
+});
+
 // Case 3: Obtuse angles
 // Case 4: Straight angle
 // Case 5: Reflex angles

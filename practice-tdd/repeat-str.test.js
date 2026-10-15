@@ -9,11 +9,18 @@ import { repeatStr } from "./repeat-str.js";
 // When the repeatStr function is called with these inputs,
 // Then it should return a string that contains the original `str` repeated `count` times.
 
-test("should repeat the string count times", () => {
+test("should repeat the string count times, count is 3", () => {
   const str = "hello";
   const count = 3;
   const repeatedStr = repeatStr(str, count);
   expect(repeatedStr).toEqual("hellohellohello");
+});
+
+test("should repeat the string count times, count is 4", () => {
+  const str = "hello";
+  const count = 4;
+  const repeatedStr = repeatStr(str, count);
+  expect(repeatedStr).toEqual("hellohellohellohello");
 });
 
 // Case: handle count of 1:

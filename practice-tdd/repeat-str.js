@@ -2,10 +2,8 @@ export function repeatStr(str, count) {
 
   let repeatedStr = "";
 
-  if (count === 1){
-    repeatedStr = 'hello';
-  } else if (count === 3){
-    repeatedStr = 'hellohellohello';
+  for (let i=0; i<count; i++){
+    repeatedStr += 'hello';
   }
 
   return repeatedStr;

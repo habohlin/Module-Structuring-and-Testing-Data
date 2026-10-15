@@ -31,6 +31,13 @@ test("any string length, varying chars in string", () => {
   expect(count).toEqual(6);
 });
 
+test("any string length, varying chars in string, any char in string", () => {
+  const str = "aaabaaa";
+  const char = "b";
+  const count = countChar(str, char);
+  expect(count).toEqual(1);
+});
+
 // Scenario: No Occurrences
 // Given the input string `str`,
 // And a character `char` that does not exist within `str`.

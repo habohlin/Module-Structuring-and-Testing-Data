@@ -46,3 +46,10 @@ test("should append 'nd' for numbers ending with 2, except those ending with 12"
   expect(getOrdinalNumber(23)).toEqual("23rd");
   expect(getOrdinalNumber(133)).toEqual("133rd");
 });
+
+// Case 6: Numbers ending with 13. Should append "th" to the number
+test("should append 'th' for numbers ending with 12", () => {
+  expect(getOrdinalNumber(13)).toEqual("13th");
+  expect(getOrdinalNumber(113)).toEqual("113th");
+  expect(getOrdinalNumber(4213)).toEqual("4213th");
+});

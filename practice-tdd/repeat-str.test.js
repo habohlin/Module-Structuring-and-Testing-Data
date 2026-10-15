@@ -51,3 +51,10 @@ test("should return empty string, count is 0", () => {
 // Given a target string `str` and a negative integer `count`,
 // When the repeatStr function is called with these inputs,
 // Then it should throw an error, as negative counts are not valid.
+
+test("should throw error, count is negative", () => {
+  const str = "hello";
+  const count = -1;
+  const repeatedStr = repeatStr(str, count);
+  expect(repeatedStr).toThrow();
+});

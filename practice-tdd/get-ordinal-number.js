@@ -16,4 +16,8 @@ export function getOrdinalNumber(num) {
     return num + "nd"
   }
 
+  if ((num - 3) % 10 === 0) {
+    return num + "rd";
+  }
+
 }

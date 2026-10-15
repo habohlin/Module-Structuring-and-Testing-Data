@@ -24,4 +24,6 @@ export function getOrdinalNumber(num) {
     return num + "rd";
   }
 
+  return num + "th";
+
 }

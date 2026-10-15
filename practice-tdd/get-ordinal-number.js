@@ -16,6 +16,10 @@ export function getOrdinalNumber(num) {
     return num + "nd"
   }
 
+  if ((num - 13) % 100 === 0) {
+    return num + "th";
+  }
+
   if ((num - 3) % 10 === 0) {
     return num + "rd";
   }

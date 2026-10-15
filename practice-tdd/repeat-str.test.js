@@ -55,6 +55,7 @@ test("should return empty string, count is 0", () => {
 test("should throw error, count is negative", () => {
   const str = "hello";
   const count = -1;
-  const repeatedStr = repeatStr(str, count);
-  expect(repeatedStr).toThrow();
+  expect(() => {
+    repeatStr(str, count);
+  }).toThrow("/Error: count should be non negative integer/");
 });

@@ -1,5 +1,10 @@
 export function repeatStr(str, count) {
 
+  if (count < 0){
+    //console.log("hi");
+    throw new Error("/Error: count should be non negative integer/");
+  }
+
   let repeatedStr = "";
 
   for (let i=0; i<count; i++){

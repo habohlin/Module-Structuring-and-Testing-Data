@@ -8,6 +8,10 @@ export function getOrdinalNumber(num) {
     return num + "st";
   }
 
+  if ((num - 12) % 100 === 0) {
+    return num + "th";
+  }
+
   if ((num - 2) % 10 === 0){
     return num + "nd"
   }

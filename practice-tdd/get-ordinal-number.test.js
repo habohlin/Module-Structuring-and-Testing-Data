@@ -53,3 +53,10 @@ test("should append 'th' for numbers ending with 12", () => {
   expect(getOrdinalNumber(113)).toEqual("113th");
   expect(getOrdinalNumber(4213)).toEqual("4213th");
 });
+
+// Case 7: All other whole numbers. Should append "th" to the number
+test("should append 'th' for numbers ending with 12", () => {
+  expect(getOrdinalNumber(-1834)).toEqual("-1834th");
+  expect(getOrdinalNumber(23151509)).toEqual("23151509th");
+  expect(getOrdinalNumber(-100)).toEqual("-100th");
+});

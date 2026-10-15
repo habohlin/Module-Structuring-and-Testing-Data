@@ -1,3 +1,11 @@
 export function getOrdinalNumber(num) {
-  return num + "st";
+
+  if ((num - 11) % 100 === 0){
+    return num + "th";
+  }
+
+  if ((num - 1) % 10 === 0){
+    return num + "st";
+  }
+
 }

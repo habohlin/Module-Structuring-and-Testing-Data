@@ -64,4 +64,7 @@ test("should append 'th' for all other whole numbers", () => {
 // Case 8: Throw error for invalid numbers
 test("should throw error for all invalid numbers", () => {
   expect(() => {getOrdinalNumber(5.7)}).toThrow("Error: whole number is needed");
+  expect(() => {
+    getOrdinalNumber();
+  }).toThrow("Error: whole number is needed");
 });

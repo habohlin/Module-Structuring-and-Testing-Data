@@ -1,5 +1,9 @@
 export function getOrdinalNumber(num) {
 
+  if (num % 1 !== 0) {
+    throw new Error("Error: whole number is needed");
+  }
+
   if ((num - 11) % 100 === 0){
     return num + "th";
   }

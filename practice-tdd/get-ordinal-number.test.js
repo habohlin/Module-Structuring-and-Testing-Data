@@ -73,4 +73,7 @@ test("should throw error for all invalid numbers", () => {
   expect(() => {
     getOrdinalNumber(undefined);
   }).toThrow("Error: whole number is needed");
+  expect(() => {
+    getOrdinalNumber(null);
+  }).toThrow("Error: whole number is needed");
 });

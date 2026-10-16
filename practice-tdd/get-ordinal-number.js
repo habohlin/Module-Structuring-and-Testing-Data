@@ -1,6 +1,6 @@
 export function getOrdinalNumber(num) {
 
-  if (num % 1 !== 0) {
+  if (num % 1 !== 0 || !num) {
     throw new Error("Error: whole number is needed");
   }
 

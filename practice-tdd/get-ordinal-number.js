@@ -1,14 +1,13 @@
 export function getOrdinalNumber(num) {
-
-  if (num % 1 !== 0 || !num || (typeof num) !== "number" || num.length > 1) {
+  if (num % 1 !== 0 || !num || typeof num !== "number" || num.length > 1) {
     throw new Error("Error: whole number is needed");
   }
 
-  if ((num - 11) % 100 === 0){
+  if ((num - 11) % 100 === 0) {
     return num + "th";
   }
 
-  if ((num - 1) % 10 === 0){
+  if ((num - 1) % 10 === 0) {
     return num + "st";
   }
 
@@ -16,8 +15,8 @@ export function getOrdinalNumber(num) {
     return num + "th";
   }
 
-  if ((num - 2) % 10 === 0){
-    return num + "nd"
+  if ((num - 2) % 10 === 0) {
+    return num + "nd";
   }
 
   if ((num - 13) % 100 === 0) {
@@ -29,5 +28,4 @@ export function getOrdinalNumber(num) {
   }
 
   return num + "th";
-
 }

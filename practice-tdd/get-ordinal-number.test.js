@@ -55,8 +55,13 @@ test("should append 'th' for numbers ending with 12", () => {
 });
 
 // Case 7: All other whole numbers. Should append "th" to the number
-test("should append 'th' for numbers ending with 12", () => {
+test("should append 'th' for all other whole numbers", () => {
   expect(getOrdinalNumber(-1834)).toEqual("-1834th");
   expect(getOrdinalNumber(23151509)).toEqual("23151509th");
   expect(getOrdinalNumber(-100)).toEqual("-100th");
+});
+
+// Case 8: Throw error for invalid numbers
+test("should throw error for all invalid numbers", () => {
+  expect(() => {getOrdinalNumber(5.7)}).toThrow("Error: whole number is needed");
 });

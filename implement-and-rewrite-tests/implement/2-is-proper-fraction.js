@@ -16,9 +16,5 @@
 export function isProperFraction(numerator, denominator) {
   const fraction = Math.abs(numerator / denominator);
 
-  if (fraction >= 0 && fraction < 1) {
-    return true;
-  }
-
-  return false;
+  return fraction >= 0 && fraction < 1;
 }

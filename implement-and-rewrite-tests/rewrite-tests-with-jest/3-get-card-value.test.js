@@ -10,68 +10,62 @@ test(`Should return 11 when given an ace card`, () => {
 // Suggestion: Group the remaining test data into these categories:
 //   Number Cards (2-10)
 
-test(`Should return 10 when given '10♣' `, () => {
+test(`Cards with valid number rank`, () => {
   expect(getCardValue("10♣")).toEqual(10);
 });
 
 //   Face Cards (J, Q, K)
 
-test(`Should return 10 when given 'K♠' `, () => {
+test(`Cards with valid letter rank`, () => {
   expect(getCardValue("K♠")).toEqual(10);
-});
-
-test(`Should return 11 when given 'A♣'`, () => {
   expect(getCardValue("A♣")).toEqual(11);
 });
 
 //   Invalid Cards
 
-test(`Should throw error when given 'invalid'`, () => {
+test(`Card with invalid string`, () => {
   expect(() => {
     getCardValue("invalid");
   }).toThrow(/Expected a number followed by a suit, but got "invalid"/);
 });
 
-test(`Should throw error when given '19♠'`, () => {
+test(`Card with number rank outside range 2-10`, () => {
   expect(() => {
     getCardValue("19♠");
   }).toThrow(/Expected a number followed by a suit, but got "19♠"/);
-});
-
-test(`Should throw error when given 'P♦'`, () => {
-  expect(() => {
-    getCardValue("P♦");
-  }).toThrow(/Expected a number followed by a suit, but got "P♦"/);
-});
-
-test(`Should throw error when given 's♦'`, () => {
-  expect(() => {
-    getCardValue("s♦");
-  }).toThrow(/Expected a number followed by a suit, but got "s♦"/);
-});
-
-test(`Should throw error when given 'sOup♦'`, () => {
-  expect(() => {
-    getCardValue("sOup♦");
-  }).toThrow(/Expected a number followed by a suit, but got "sOup♦"/);
-});
-
-test(`Should throw error when given '-3♦'`, () => {
   expect(() => {
     getCardValue("-3♦");
   }).toThrow(/Expected a number followed by a suit, but got "-3♦"/);
 });
 
-test(`Should throw error when given '5'`, () => {
+test(`Card with letter rank other than the correct options`, () => {
+  expect(() => {
+    getCardValue("P♦");
+  }).toThrow(/Expected a number followed by a suit, but got "P♦"/);
+  expect(() => {
+    getCardValue("s♦");
+  }).toThrow(/Expected a number followed by a suit, but got "s♦"/);
+  expect(() => {
+    getCardValue("sOup♦");
+  }).toThrow(/Expected a number followed by a suit, but got "sOup♦"/);
+});
+
+test(`Card with valid number rank lacking suit`, () => {
   expect(() => {
     getCardValue("5");
   }).toThrow(/Expected a number followed by a suit, but got "5"/);
 });
 
-test(`Should throw error when given 'Q'`, () => {
+test(`Card with valid letter rank lacking suit`, () => {
   expect(() => {
     getCardValue("Q");
   }).toThrow(/Expected a number followed by a suit, but got "Q"/);
+});
+
+test(`Card with valid suit lacking rank`, () => {
+  expect(() => {
+    getCardValue("♠");
+  }).toThrow(/Expected a number followed by a suit, but got "♠"/);
 });
 
 // To learn how to test whether a function throws an error as expected in Jest,

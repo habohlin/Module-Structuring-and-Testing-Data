@@ -19,39 +19,12 @@ test("Arbitrary non-card string", () => {
 
 // TODO: What other invalid card cases can you think of?
 
-test("Arbitrary non-card string '19♠'", () => {
+test("Card with number rank outside range 2-10", () => {
   assert.throws(
     () => getCardValue("19♠"),
     /Expected a number followed by a suit, but got "19♠"/,
     "Expected clear error"
   );
-});
-
-test("Arbitrary non-card string 'P♦'", () => {
-  assert.throws(
-    () => getCardValue("P♦"),
-    /Expected a number followed by a suit, but got "P♦"/,
-    "Expected clear error"
-  );
-});
-
-test("Arbitrary non-card string 's♦'", () => {
-  assert.throws(
-    () => getCardValue("s♦"),
-    /Expected a number followed by a suit, but got "s♦"/,
-    "Expected clear error"
-  );
-});
-
-test("Arbitrary non-card string 'sOup♦'", () => {
-  assert.throws(
-    () => getCardValue("soUp♦"),
-    /Expected a number followed by a suit, but got "soUp♦"/,
-    "Expected clear error"
-  );
-});
-
-test("Arbitrary non-card string '-3♦'", () => {
   assert.throws(
     () => getCardValue("-3♦"),
     /Expected a number followed by a suit, but got "-3♦"/,
@@ -59,7 +32,25 @@ test("Arbitrary non-card string '-3♦'", () => {
   );
 });
 
-test("Arbitrary non-card string '5'", () => {
+test("Card with letter rank other than the correct options", () => {
+  assert.throws(
+    () => getCardValue("P♦"),
+    /Expected a number followed by a suit, but got "P♦"/,
+    "Expected clear error"
+  );
+  assert.throws(
+    () => getCardValue("s♦"),
+    /Expected a number followed by a suit, but got "s♦"/,
+    "Expected clear error"
+  );
+  assert.throws(
+    () => getCardValue("soUp♣"),
+    /Expected a number followed by a suit, but got "soUp♣"/,
+    "Expected clear error"
+  );
+});
+
+test("Card with valid number rank lacking suit", () => {
   assert.throws(
     () => getCardValue("5"),
     /Expected a number followed by a suit, but got "5"/,
@@ -67,7 +58,7 @@ test("Arbitrary non-card string '5'", () => {
   );
 });
 
-test("Arbitrary non-card string 'Q'", () => {
+test("Card with valid letter rank lacking suit", () => {
   assert.throws(
     () => getCardValue("Q"),
     /Expected a number followed by a suit, but got "Q"/,
@@ -75,16 +66,18 @@ test("Arbitrary non-card string 'Q'", () => {
   );
 });
 
+test("Card with valid suit lacking rank", () => {
+  assert.throws(
+    () => getCardValue("♠"),
+    /Expected a number followed by a suit, but got "♠"/,
+    "Expected clear error"
+  );
+});
+
 //Valid cases
 
-test("Valid card 'A♣'", () => {
+test("Valid cards", () => {
   assert.equal(getCardValue("A♣"), 11);
-});
-
-test("Valid card '10♣'", () => {
   assert.equal(getCardValue("10♣"), 10);
-});
-
-test("Valid card 'K♠'", () => {
   assert.equal(getCardValue("K♠"), 10);
 });

@@ -1,11 +1,11 @@
 export function countChar(stringOfCharacters, findCharacter) {
-  let numOfa = 0;
+  let numOfChar = 0;
 
   for (let i = 0; i < stringOfCharacters.length; i++) {
     if (stringOfCharacters.charAt(i) === findCharacter) {
-      numOfa++;
+      numOfChar++;
     }
   }
 
-  return numOfa;
+  return numOfChar;
 }

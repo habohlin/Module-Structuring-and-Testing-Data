@@ -3,7 +3,11 @@ export function getOrdinalNumber(num) {
     throw new Error("Error: whole number is needed");
   }
 
-  if ((num - 11) % 100 === 0) {
+  if (
+    (num - 11) % 100 === 0 ||
+    (num - 12) % 100 === 0 ||
+    (num - 13) % 100 === 0
+  ) {
     return num + "th";
   }
 
@@ -11,16 +15,8 @@ export function getOrdinalNumber(num) {
     return num + "st";
   }
 
-  if ((num - 12) % 100 === 0) {
-    return num + "th";
-  }
-
   if ((num - 2) % 10 === 0) {
     return num + "nd";
-  }
-
-  if ((num - 13) % 100 === 0) {
-    return num + "th";
   }
 
   if ((num - 3) % 10 === 0) {

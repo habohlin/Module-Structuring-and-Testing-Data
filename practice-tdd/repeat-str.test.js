@@ -9,21 +9,18 @@ import { repeatStr } from "./repeat-str.js";
 // When the repeatStr function is called with these inputs,
 // Then it should return a string that contains the original `str` repeated `count` times.
 
-test("should repeat the string count times, count is 3", () => {
-  const str = "hello";
-  const count = 3;
-  const repeatedStr = repeatStr(str, count);
+test("should repeat the string count times", () => {
+  let str = "hello";
+  let count = 3;
+  let repeatedStr = repeatStr(str, count);
   expect(repeatedStr).toEqual("hellohellohello");
-});
-
-test("should repeat the string count times, count is 4", () => {
-  const str = "hello";
-  const count = 4;
-  const repeatedStr = repeatStr(str, count);
+  str = "hello";
+  count = 4;
+  repeatedStr = repeatStr(str, count);
   expect(repeatedStr).toEqual("hellohellohellohello");
 });
 
-test("should repeat the string count times, count is 3, any string", () => {
+test("should repeat the string count times, any string", () => {
   const str = "Orb";
   const count = 3;
   const repeatedStr = repeatStr(str, count);
@@ -35,7 +32,7 @@ test("should repeat the string count times, count is 3, any string", () => {
 // When the repeatStr function is called with these inputs,
 // Then it should return the original `str` without repetition.
 
-test("should repeat 'hello' 1 time", () => {
+test("should not repeat string when count is 1", () => {
   const str = "hello";
   const count = 1;
   const repeatedStr = repeatStr(str, count);
@@ -47,7 +44,7 @@ test("should repeat 'hello' 1 time", () => {
 // When the repeatStr function is called with these inputs,
 // Then it should return an empty string.
 
-test("should return empty string, count is 0", () => {
+test("should return empty string when count is 0", () => {
   const str = "hello";
   const count = 0;
   const repeatedStr = repeatStr(str, count);
@@ -59,7 +56,7 @@ test("should return empty string, count is 0", () => {
 // When the repeatStr function is called with these inputs,
 // Then it should throw an error, as negative counts are not valid.
 
-test("should throw error, count is negative", () => {
+test("should throw error when count is negative", () => {
   const str = "hello";
   const count = -1;
   expect(() => {

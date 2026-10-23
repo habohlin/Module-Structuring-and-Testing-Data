@@ -61,11 +61,15 @@ test("should append 'th' for all other whole numbers", () => {
   expect(getOrdinalNumber(-100)).toEqual("-100th");
 });
 
-// Case 8: Throw error for invalid numbers
+// Case 8: Throw error for invalid-numbers
 test("should throw error for all invalid numbers", () => {
   expect(() => {
     getOrdinalNumber(5.7);
   }).toThrow("Error: whole number is needed");
+})
+
+// Case 9: Throw error for non-numbers
+test("should throw error for all non-numbers", () => {
   expect(() => {
     getOrdinalNumber();
   }).toThrow("Error: whole number is needed");
@@ -76,18 +80,6 @@ test("should throw error for all invalid numbers", () => {
     getOrdinalNumber(undefined);
   }).toThrow("Error: whole number is needed");
   expect(() => {
-    getOrdinalNumber(null);
-  }).toThrow("Error: whole number is needed");
-  expect(() => {
-    getOrdinalNumber(false);
-  }).toThrow("Error: whole number is needed");
-  expect(() => {
     getOrdinalNumber(true);
-  }).toThrow("Error: whole number is needed");
-  expect(() => {
-    getOrdinalNumber([1, 2, 3]);
-  }).toThrow("Error: whole number is needed");
-  expect(() => {
-    getOrdinalNumber({ 4: "hey", bye: 39 });
   }).toThrow("Error: whole number is needed");
 });

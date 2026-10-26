@@ -54,32 +54,38 @@ test("should append 'th' for numbers ending with 13", () => {
   expect(getOrdinalNumber(4213)).toEqual("4213th");
 });
 
-// Case 7: All other whole numbers. Should append "th" to the number
-test("should append 'th' for all other whole numbers", () => {
-  expect(getOrdinalNumber(-1834)).toEqual("-1834th");
+// Case 7: All other positive whole numbers. Should append "th" to the number
+test("should append 'th' for all other positive whole numbers", () => {
+  expect(getOrdinalNumber(1834)).toEqual("1834th");
   expect(getOrdinalNumber(23151509)).toEqual("23151509th");
-  expect(getOrdinalNumber(-100)).toEqual("-100th");
+  expect(getOrdinalNumber(100)).toEqual("100th");
 });
 
 // Case 8: Throw error for invalid-numbers
 test("should throw error for all invalid numbers", () => {
   expect(() => {
     getOrdinalNumber(5.7);
-  }).toThrow("Error: whole number is needed");
+  }).toThrow("Error: positive whole number is needed");
+  expect(() => {
+    getOrdinalNumber(-3859);
+  }).toThrow("Error: positive whole number is needed");
+  expect(() => {
+    getOrdinalNumber(0);
+  }).toThrow("Error: positive whole number is needed");
 })
 
 // Case 9: Throw error for non-numbers
 test("should throw error for all non-numbers", () => {
   expect(() => {
     getOrdinalNumber();
-  }).toThrow("Error: whole number is needed");
+  }).toThrow("Error: positive whole number is needed");
   expect(() => {
     getOrdinalNumber("hey");
-  }).toThrow("Error: whole number is needed");
+  }).toThrow("Error: positive whole number is needed");
   expect(() => {
     getOrdinalNumber(undefined);
-  }).toThrow("Error: whole number is needed");
+  }).toThrow("Error: positive whole number is needed");
   expect(() => {
     getOrdinalNumber(true);
-  }).toThrow("Error: whole number is needed");
+  }).toThrow("Error: positive whole number is needed");
 });

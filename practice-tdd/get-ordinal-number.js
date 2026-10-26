@@ -1,5 +1,11 @@
 export function getOrdinalNumber(num) {
-  if (num <= 0 || num % 1 !== 0 || !num || typeof num !== "number" || num.length > 1) {
+  if (
+    num <= 0 ||
+    num % 1 !== 0 ||
+    !num ||
+    typeof num !== "number" ||
+    num.length > 1
+  ) {
     throw new Error("Error: positive whole number is needed");
   }
 

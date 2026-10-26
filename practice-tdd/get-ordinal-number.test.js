@@ -72,7 +72,7 @@ test("should throw error for all invalid numbers", () => {
   expect(() => {
     getOrdinalNumber(0);
   }).toThrow("Error: positive whole number is needed");
-})
+});
 
 // Case 9: Throw error for non-numbers
 test("should throw error for all non-numbers", () => {
